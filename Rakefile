@@ -1,8 +1,17 @@
 require 'aws-sdk-sqs'
-client = Aws::SQS::Client.new(region: "eu-central-1")
+require_relative 'lib/publisher'
 
+client = Aws::SQS::Client.new(region: "eu-central-1")
 queue_url = ENV["QUEUE_URL"]
 raise "Queue URL not supplied (via environment variable $QUEUE_URL)" if queue_url.nil?
+
+desc "publish several messages"
+task :publish_many_messages, [:count] do |t, args|
+    count = args[:count].to_i
+    publisher = Publisher.new(client, queue_url)
+    publisher.send_many_messages(count)
+end
+
 
 desc "consume one message successfully"
 
