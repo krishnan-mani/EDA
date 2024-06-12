@@ -3,12 +3,12 @@
 - create a queue
 - send message
 - receive message
+  - demonstrate visibility timeout
+  - demonstrate messages moved to DLQ
 
 ### using ruby code
 
 - consume message successfully
-- fail to consume message
-- repeated failures result in moving the message to DLQ
 - publish a number of messages
 
 ### in the console
