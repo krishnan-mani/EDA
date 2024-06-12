@@ -25,4 +25,11 @@ $ rspec -f d -t integration
 # purge queue
 $ aws sqs purge-queue --queue-url $QUEUE_URL
 
+$ rake -T
+rake consume_one                   # consume one message successfully
+rake publish_many_messages[count]  # publish several messages
+
+$ rake publish_many_messages[3]
+$ rake consume_one
+
 ```
