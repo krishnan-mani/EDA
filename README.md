@@ -14,6 +14,10 @@ $ aws sqs send-message --queue-url $QUEUE_URL --message-body "foo"
 
 # receive a message
 $ aws sqs receive-message --queue-url $QUEUE_URL
+$ aws sqs receive-message \
+    --max-number-of-messages 10 \
+    --queue-url $QUEUE_URL \
+    --query "Messages[*].Body"
 
 # run integration tests
 $ rspec -f d -t integration
@@ -22,4 +26,3 @@ $ rspec -f d -t integration
 $ aws sqs purge-queue --queue-url $QUEUE_URL
 
 ```
-
