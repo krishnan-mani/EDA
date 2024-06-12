@@ -5,9 +5,11 @@ client = Aws::SQS::Client.new(region: "eu-central-1")
 queue_url = ENV["QUEUE_URL"]
 raise "Queue URL not supplied (via environment variable $QUEUE_URL)" if queue_url.nil?
 
-desc "publish several messages"
+LIMIT = 10
+desc "publish several messages (upto 10)"
 task :publish_many_messages, [:count] do |t, args|
-    count = args[:count].to_i
+    count = args[:count].to_i.abs
+    raise "Specify a count of 10 or fewer messages" if count > LIMIT
     publisher = Publisher.new(client, queue_url)
     publisher.send_many_messages(count)
 end
