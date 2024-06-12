@@ -5,6 +5,7 @@
 
 $ rbenv local
 $ rbenv gemset active
+$ bundle install
 
 $ export AWS_PROFILE=workshop
 $ export AWS_REGION=eu-central-1
@@ -29,7 +30,7 @@ $ aws sqs purge-queue --queue-url $QUEUE_URL
 
 $ rake -T
 rake consume_one                   # consume one message successfully
-rake publish_many_messages[count]  # publish several messages
+rake publish_many_messages[count]  # publish several messages (upto 10)
 
 $ rake publish_many_messages[3]
 $ rake consume_one
