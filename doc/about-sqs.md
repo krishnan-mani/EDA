@@ -8,9 +8,8 @@ We want to
 ### SQS message protocol for clients
 
 - A message "producer" publishes a message to the queue. The message stays on the queue until it is deleted, or its age exceeds the retention period (from 1 minute to 14 days, default 4 days)
-- Any message consumer that requests a message may receive some message on the queue
+- Any consumer that requests a message may receive some message on the queue. For a further short period of time (visibility timeout), the same message will not be received by any other consumer.
   - (note on whether order is guaranteed)
-- For a further short period of time (visibility timeout), the same message will not be received by any otther consumer
 - The consumer may or may not successfully process the message
   - If the consumer processes the message successfully, they delete the message. It is no longer available
   - If the consumer fails to process the message, or the visibility timeout elapses, the same message may be received by a different consumer
