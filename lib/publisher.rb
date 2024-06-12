@@ -1,4 +1,6 @@
 require 'aws-sdk-sqs'
+require 'date'
+require 'json'
 
 class Publisher
 
@@ -14,7 +16,13 @@ class Publisher
   end
 
   def send_many_messages(count = 3)
-    
+    timestamp = DateTime.now()
+    messages = 1.upto(count).map do |index|
+      {id: index, at: timestamp.to_s}
+    end
+    messages.each do |msg| 
+      send_message(msg.to_json)
+    end
   end
 
 end
