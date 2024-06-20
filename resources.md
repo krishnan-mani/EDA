@@ -1,3 +1,5 @@
 - [SQS](https://aws.amazon.com/sqs/)
-- [AWS SDK API reference for SQS](https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/SQS/Client.html#send_message-instance_method)
+- [SQS Developer guide](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html)
+- [AWS API reference for SQS](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/Welcome.html)
+- [Ruby AWS SDK API v3 reference for SQS](https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/SQS/Client.html#send_message-instance_method)
 - [code examples for SQS](https://docs.aws.amazon.com/sdk-for-ruby/v3/developer-guide/sqs-example-send-and-receive-messages.html)
