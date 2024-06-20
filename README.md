@@ -13,8 +13,10 @@ $ bundle install
 
 $ export AWS_PROFILE=workshop
 $ export AWS_REGION=eu-central-1
-$ aws sqs list-queues
+
+$ aws sqs list-queues --output text --query "QueueUrls[0]"
 # export an environment variable: QUEUE_URL
+$ echo $QUEUE_URL
 
 # send a message
 $ aws sqs send-message --queue-url $QUEUE_URL --message-body "foo"

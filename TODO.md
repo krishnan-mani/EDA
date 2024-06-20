@@ -1,0 +1,3 @@
+- [ ] support use of docker to run examples
+- [ ] add commands to locate and use profiles for AWS credentials
+- [ ] include schematic diagrams
