@@ -1,3 +1,7 @@
+### Pre-requisites
+
+- [rbenv](https://github.com/rbenv/rbenv)
+- [rbenv-gemset](https://github.com/jf/rbenv-gemset)
 
 ### SQS
 
